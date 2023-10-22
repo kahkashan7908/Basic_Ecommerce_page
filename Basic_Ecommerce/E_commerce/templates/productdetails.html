@@ -1,0 +1,18 @@
+{% extends 'navbar.html' %}
+{% block body %}
+    <div class="container">
+        <div class="row m-5">
+            <div class="card card-img col-md-4"  style="box-shadow: 3px 3px 8px gray;">
+                <div class="card-body">
+                    <img src="{{data.image }}" alt="Image not found"  class="card-img-top" style="height: 350px; width: 250px">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div> {{data.title }}</div>
+                <div>₹{{data.discount_price }}</div>
+                <div><strike>₹{{data.price }}</strike></div>
+                <div>{{ data.description }}</div>
+            </div>
+        </div>   
+    </div>
+{% endblock %}

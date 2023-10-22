@@ -1,0 +1,25 @@
+{% extends 'navbar.html' %}
+{% block body %}
+        <div class="container-fluid">
+            <div class="row">
+                {% for product in data %}
+                <div class="col-md-3 mt-3">
+                    <div class="card card-img"  style="box-shadow: 3px 3px 8px gray;">
+                        <div class="card-body">
+                            <img src="{{product.image }}" alt="Image not found"  class="card-img-top w-100" style="height: 300px;">
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-title" id="nm{{product.id}}">{{product.title }}</div>
+                            <div class="price" style="display:flex; margin: 10px;">
+                            <div  class="card-discount_price" id="price{{ product.id }}">₹{{ product.discount_price }}</div>
+                            <div  class="card-price" id="{{ product.id }}"><strike style="margin-left:15px;">₹{{ product.price }}</strike></div>
+                            </div>
+                            <a href="{{product.id}}"  class="btn btn-primary">View</a>
+                            <button id="{{product.id}}" class="add btn btn-warning">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div> 
+        </div>    
+{% endblock %}
